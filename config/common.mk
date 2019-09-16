@@ -226,15 +226,12 @@ endif
 # Settings
 PRODUCT_PACKAGES += \
     SystemPitchBlackOverlay \
-    SystemUIPitchBlackOverlay \
     SystemDarkGrayOverlay \
     SystemUIDarkGrayOverlay \
     SystemStyleOverlay \
     SystemUIStyleOverlay \
     SystemNightOverlay \
-    SystemUINightOverlay \
-    SystemSolarizedDarkOverlay \
-    SystemUISolarizedDarkOverlay
+    SystemUINightOverlay
 
 # Root
 PRODUCT_PACKAGES += \
