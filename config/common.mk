@@ -232,7 +232,9 @@ PRODUCT_PACKAGES += \
     SystemStyleOverlay \
     SystemUIStyleOverlay \
     SystemNightOverlay \
-    SystemUINightOverlay
+    SystemUINightOverlay \
+    SystemSolarizedDarkOverlay \
+    SystemUISolarizedDarkOverlay
 
 # Root
 PRODUCT_PACKAGES += \
