@@ -232,5 +232,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lighthouse/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/lighthouse/overlay/common
 
+# Fonts
+include vendor/lighthouse/config/fonts.mk
+
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lighthouse/config/partner_gms.mk
