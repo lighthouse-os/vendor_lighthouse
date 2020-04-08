@@ -234,7 +234,9 @@ PRODUCT_PACKAGES += \
     SystemNightOverlay \
     SystemUINightOverlay \
     SystemSolarizedDarkOverlay \
-    SystemUISolarizedDarkOverlay
+    SystemUISolarizedDarkOverlay \
+    SystemMaterialOceanOverlay \
+    SystemUIMaterialOceanOverlay
 
 # Root
 PRODUCT_PACKAGES += \
