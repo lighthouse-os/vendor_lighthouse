@@ -169,9 +169,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
 
-# These packages are excluded from user builds
-PRODUCT_PACKAGES_DEBUG += \
-    procmem
+# Media
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    media.recorder.show_manufacturer_and_model=true
+
+# TouchGestures
+PRODUCT_PACKAGES += \
+    TouchGestures
+
+# PixelSetupWizard overlay
+PRODUCT_PACKAGES += \
+    PixelSetupWizardOverlay \
+    PixelSetupWizardAodOverlay
+
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    NexusLauncherRelease
 
 # Root
 PRODUCT_PACKAGES += \
