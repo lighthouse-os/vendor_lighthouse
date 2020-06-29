@@ -39,6 +39,7 @@ SOONG_CONFIG_lighthouseGlobalVars += \
     target_ld_shim_libs \
     target_process_sdk_version_override \
     target_surfaceflinger_fod_lib \
+    target_uses_prebuilt_dynamic_partitions \
     uses_camera_parameter_lib
 
 SOONG_CONFIG_NAMESPACES += lighthouseNvidiaVars
@@ -75,6 +76,7 @@ SOONG_CONFIG_lighthouseQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPT
 SOONG_CONFIG_lighthouseQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
 SOONG_CONFIG_lighthouseQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGACY)
 SOONG_CONFIG_lighthouseQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
+SOONG_CONFIG_lighthouseGlobalVars_target_uses_prebuilt_dynamic_partitions := $(TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
