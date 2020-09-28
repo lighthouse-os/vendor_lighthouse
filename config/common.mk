@@ -276,5 +276,19 @@ include vendor/lighthouse/config/fonts.mk
 # RRO Overlays
 $(call inherit-product, vendor/lighthouse/config/rro_overlays.mk)
 
+# Custom Overlays
+# Settings
+PRODUCT_PACKAGES += \
+    SystemRavenBlackOverlay \
+    SystemUIRavenBlackOverlay \
+    SystemDarkGrayOverlay \
+    SystemUIDarkGrayOverlay \
+    SystemStyleOverlay \
+    SystemUIStyleOverlay \
+    SystemNightOverlay \
+    SystemUINightOverlay \
+    SystemSolarizedDarkOverlay \
+    SystemUISolarizedDarkOverlay
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lighthouse/config/partner_gms.mk
