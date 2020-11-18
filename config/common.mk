@@ -196,9 +196,15 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     TouchGestures
 
-# PixelSetupWizard overlay
+# RRO Overlays
 PRODUCT_PACKAGES += \
-    PixelSetupWizardAodOverlay
+    PixelSetupWizardAodOverlay \
+    IconPackCircularPixelLauncherOverlay \
+    IconPackCircularPixelThemePickerOverlay \
+    IconPackFilledPixelLauncherOverlay \
+    IconPackFilledPixelThemePickerOverlay \
+    IconPackRoundedPixelLauncherOverlay \
+    IconPackRoundedPixelThemePickerOverlay \
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
