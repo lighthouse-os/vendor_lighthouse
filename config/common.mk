@@ -196,16 +196,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     TouchGestures
 
-# RRO Overlays
-PRODUCT_PACKAGES += \
-    PixelSetupWizardAodOverlay \
-    IconPackCircularPixelLauncherOverlay \
-    IconPackCircularPixelThemePickerOverlay \
-    IconPackFilledPixelLauncherOverlay \
-    IconPackFilledPixelThemePickerOverlay \
-    IconPackRoundedPixelLauncherOverlay \
-    IconPackRoundedPixelThemePickerOverlay \
-
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     NexusLauncherRelease
@@ -249,6 +239,9 @@ DEVICE_PACKAGE_OVERLAYS += vendor/lighthouse/overlay/common
 # Fonts
 include vendor/lighthouse/config/fonts.mk
 
+
+# RRO Overlays
+$(call inherit-product, vendor/lighthouse/config/rro_overlays.mk)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lighthouse/config/partner_gms.mk
