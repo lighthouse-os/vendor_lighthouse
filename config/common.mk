@@ -288,7 +288,15 @@ PRODUCT_PACKAGES += \
     SystemNightOverlay \
     SystemUINightOverlay \
     SystemSolarizedDarkOverlay \
-    SystemUISolarizedDarkOverlay
+    SystemUISolarizedDarkOverlay \
+    SystemMaterialOceanOverlay \
+    SystemUIMaterialOceanOverlay \
+    SystemBakedGreenOverlay \
+    SystemUIBakedGreenOverlay \
+    SystemChocoXOverlay \
+    SystemUIChocoXOverlay \
+    SystemDarkAubergineOverlay \
+    SystemUIDarkAubergineOverlay
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lighthouse/config/partner_gms.mk
