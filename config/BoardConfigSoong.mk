@@ -35,6 +35,7 @@ SOONG_CONFIG_lighthouseGlobalVars += \
     has_memfd_backport \
     ignores_ftp_pptp_conntrack_failure \
     needs_netd_direct_connect_rule \
+    target_camera_needs_client_info \
     target_init_vendor_lib \
     target_ld_shim_libs \
     target_process_sdk_version_override \
@@ -77,6 +78,7 @@ SOONG_CONFIG_lighthouseQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USE
 SOONG_CONFIG_lighthouseQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGACY)
 SOONG_CONFIG_lighthouseQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
 SOONG_CONFIG_lighthouseGlobalVars_target_uses_prebuilt_dynamic_partitions := $(TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS)
+SOONG_CONFIG_lighthouseGlobalVars_target_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 
 # Set default values
 BOOTLOADER_MESSAGE_OFFSET ?= 0
