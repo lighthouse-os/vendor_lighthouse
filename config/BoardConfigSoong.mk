@@ -30,6 +30,7 @@ SOONG_CONFIG_NAMESPACES += lighthouseGlobalVars
 SOONG_CONFIG_lighthouseGlobalVars += \
     additional_gralloc_10_usage_bits \
     bootloader_message_offset \
+    camera_needs_client_info \
     disable_postrender_cleanup \
     has_legacy_camera_hal1 \
     has_memfd_backport \
@@ -65,6 +66,7 @@ SOONG_CONFIG_lighthouseQcomVars += \
 endif
 
 # Soong bool variables
+SOONG_CONFIG_lighthouseGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 SOONG_CONFIG_lighthouseGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POSTRENDER_CLEANUP)
 SOONG_CONFIG_lighthouseGlobalVars_has_memfd_backport := $(TARGET_HAS_MEMFD_BACKPORT)
 SOONG_CONFIG_lighthouseGlobalVars_has_legacy_camera_hal1 := $(TARGET_HAS_LEGACY_CAMERA_HAL1)
