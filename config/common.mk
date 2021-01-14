@@ -124,6 +124,9 @@ include vendor/lighthouse/bootanimation/bootanimation.mk
 # Versioning
 include vendor/lighthouse/config/versioning.mk
 
+# OTA
+include vendor/lighthouse/config/ota.mk
+
 # Pill radius
 PRODUCT_PACKAGES += \
     GesturalNavigationRadiusLow \
