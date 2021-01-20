@@ -19,5 +19,9 @@
 
     <!-- Help URL, Fingerprint [DO NOT TRANSLATE] -->
     <string name="help_url_fingerprint" translatable="false">https://support.google.com</string>
+    
+     <!-- Backup Transport selection settings menu and activity title --> 
+    <string name="backup_transport_setting_label">Change backup provider</string>
+
 </resources>
 
