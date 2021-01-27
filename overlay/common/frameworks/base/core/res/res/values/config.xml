@@ -108,14 +108,7 @@
         <item>cx.ring</item>
         <item>org.briarproject.briar.android</item>
     </string-array>
-    
-    <!-- Whether or not swipe up gesture is enabled by default -->
-    <bool name="config_swipe_up_gesture_default">true</bool>
 
-    <!-- Additional UI Config -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>
-    <bool name="config_sendPackageName">true</bool>
-    <dimen name="config_dialogCornerRadius">16.0dip</dimen>
-    <dimen name="config_buttonCornerRadius">16.0dip</dimen>
-    <dimen name="config_progressBarCornerRadius">1000.0dip</dimen>
+    <!-- Flag indicating which package name can access DeviceConfig table -->
+    <string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string>
 </resources>
