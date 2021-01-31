@@ -25,7 +25,7 @@ endif
 
 # Gapps
 ifeq ($(WITH_GAPPS), true)
-$(call inherit-product, vendor/google/gms/gms-vendor.mk.mk)
+$(call inherit-product, vendor/google/gms/gms-vendor.mk)
 endif
 
 # Navbar - gestural
