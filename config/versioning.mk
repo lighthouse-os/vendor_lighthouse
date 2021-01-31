@@ -26,6 +26,10 @@ ifeq ($(WITH_GAPPS), true)
     LIGHTHOUSE_VARIANT := GAPPS
 endif
 
+# Gapps
+ifeq ($(WITH_GAPPS), true)
+$(call inherit-product, vendor/google/gms/gms-vendor.mk)
+endif
 
 # System version
 TARGET_PRODUCT_SHORT := $(subst lighthouse_,,$(LIGHTHOUSE_BUILD_TYPE))
