@@ -28,6 +28,9 @@ ifeq ($(WITH_GAPPS), true)
 $(call inherit-product, vendor/google/gms/gms-vendor.mk.mk)
 endif
 
+# Navbar - gestural
+ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/lighthouse/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
