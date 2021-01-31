@@ -29,7 +29,10 @@ $(call inherit-product, vendor/google/gms/gms-vendor.mk.mk)
 endif
 
 # Navbar - gestural
+ifeq ($(NO_GESTURE_BY_DEFAULT), true)
+else
 ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
