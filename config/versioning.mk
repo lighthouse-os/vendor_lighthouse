@@ -28,7 +28,7 @@ endif
 
 # Gapps
 ifeq ($(WITH_GAPPS), true)
-$(call inherit-product, vendor/google/gms/gms-vendor.mk)
+$(call inherit-product, vendor/gapps/config.mk)
 endif
 
 # System version
