@@ -23,7 +23,8 @@ else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
-
+# Gboard
+ro.com.google.ime.kb_pad_port_b=1
 
 # Navbar - gestural
 ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
