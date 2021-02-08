@@ -124,6 +124,12 @@ include vendor/lighthouse/bootanimation/bootanimation.mk
 # Versioning
 include vendor/lighthouse/config/versioning.mk
 
+# Pill radius
+PRODUCT_PACKAGES += \
+    GesturalNavigationRadiusLow \
+    GesturalNavigationRadiusVeryLow \
+    GesturalNavigationRadiusHidden
+
 # Extra tools in Lighthouse
 PRODUCT_PACKAGES += \
     7z \
