@@ -49,6 +49,7 @@ SOONG_CONFIG_lighthouseNvidiaVars += \
 
 SOONG_CONFIG_NAMESPACES += lighthouseQcomVars
 SOONG_CONFIG_lighthouseQcomVars += \
+    legacy_hw_disk_encryption \
     should_wait_for_qsee \
     supports_extended_compress_format \
     supports_hw_fde \
@@ -97,6 +98,7 @@ SOONG_CONFIG_lighthouseGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TA
 SOONG_CONFIG_lighthouseGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
 SOONG_CONFIG_lighthouseGlobalVars_target_surfaceflinger_fod_lib := $(TARGET_SURFACEFLINGER_FOD_LIB)
 SOONG_CONFIG_lighthouseGlobalVars_uses_camera_parameter_lib := $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY)
+SOONG_CONFIG_lighthouseQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_lighthouseQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
 else
