@@ -2,12 +2,12 @@
 LIGHTHOUSE_BUILD_VERSION = Raft
 LIGHTHOUSE_BUILD_TYPE ?= UNOFFICIAL
 LIGHTHOUSE_VARIANT ?= VANILLA
-LIGHTHOUSE_BUILD_MAINTAINER ?= Unofficial maintainer
+LIGHTHOUSE_BUILD_MAINTAINER ?= Spam Dev Moment.
 LIGHTHOUSE_BUILD_DONATE_URL ?= https://www.paypal.me/dartdental
 LIGHTHOUSE_BUILD_SUPPORT_URL ?= https://t.me/LIGHTHOUSEOS_chat
 
 ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
-  OFFICIAL_DEVICES = $(shell cat vendor/lighthouse/lighthouse.devices)
+  OFFICIAL_DEVICES = $(shell cat device/official/lighthouse.devices)
   FOUND_DEVICE =  $(filter $(LIGHTHOUSE_BUILD), $(OFFICIAL_DEVICES))
     ifeq ($(FOUND_DEVICE),$(LIGHTHOUSE_BUILD))
       LIGHTHOUSE_BUILD_TYPE := OFFICIAL
