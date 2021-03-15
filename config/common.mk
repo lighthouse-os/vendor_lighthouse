@@ -105,10 +105,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Terminal
 
-# Themes
-PRODUCT_PACKAGES += \
-    ThemePicker
-
 # Config
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
@@ -118,6 +114,11 @@ include vendor/lighthouse/bootanimation/bootanimation.mk
 
 # Versioning
 include vendor/lighthouse/config/versioning.mk
+
+ifeq ($(LIGHTHOUSE_VARIANT), VANILLA)
+    PRODUCT_PACKAGES += \
+        ThemePicker
+endif
 
 # Extra tools in Lighthouse
 PRODUCT_PACKAGES += \
