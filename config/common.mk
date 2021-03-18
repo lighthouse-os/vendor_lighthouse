@@ -243,6 +243,8 @@ PRODUCT_PACKAGES += \
     SystemUIChocoXOverlay \
     SystemDarkAubergineOverlay \
     SystemUIDarkAubergineOverlay
+    SystemDark12Overlay \
+    SystemUIDark12Overlay \
 
 # Root
 PRODUCT_PACKAGES += \
