@@ -44,8 +44,8 @@ DEBUG = False
 custom_local_manifest = ".repo/manifests/snippets/lighthouse.xml"
 custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'raft')
 custom_dependencies = "lighthouse.dependencies"
-org_manifest = "LighthouseOS-Devices"  # leave empty if org is provided in manifest
-org_display = "LighthouseOS-Devices"  # needed for displaying
+org_manifest = "lighthouse-os-devices"  # leave empty if org is provided in manifest
+org_display = "lighthouse-os-devices"  # needed for displaying
 
 github_auth = None
 
