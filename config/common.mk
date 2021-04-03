@@ -120,6 +120,9 @@ ifeq ($(LIGHTHOUSE_VARIANT), VANILLA)
         ThemePicker
 endif
 
+# Lawnchair
+-include prebuilts/apps/Lawnchair/lawnchair.mk
+
 # Extra tools in Lighthouse
 PRODUCT_PACKAGES += \
     7z \
