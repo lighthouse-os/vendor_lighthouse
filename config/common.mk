@@ -123,6 +123,11 @@ PRODUCT_PACKAGES += \
 # CustomDoze
 PRODUCT_PACKAGES += \
     CustomDoze
+
+# GameMode
+PRODUCT_PACKAGES += \
+    GamingMode
+
 # StichImage
 PRODUCT_PACKAGES += \
     StitchImage
