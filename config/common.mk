@@ -119,9 +119,6 @@ include vendor/lighthouse/bootanimation/bootanimation.mk
 # Versioning
 include vendor/lighthouse/config/versioning.mk
 
-# Lawnchair
--include prebuilts/apps/Lawnchair/lawnchair.mk
-
 # Extra tools in Lighthouse
 PRODUCT_PACKAGES += \
     7z \
