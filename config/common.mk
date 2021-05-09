@@ -75,9 +75,14 @@ PRODUCT_COPY_FILES += \
     vendor/lighthouse/config/permissions/privapp-permissions-lighthouse.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lighthouse.xml \
     vendor/lighthouse/config/permissions/privapp-permissions-lighthouse.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lighthouse.xml \
 
+ifeq ($(LIGHTHOUSE_VARIANT),GAPPS)
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
+else 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.control_privapp_permissions=log
+endif
 
 # Include AOSP audio files
 include vendor/lighthouse/config/aosp_audio.mk
