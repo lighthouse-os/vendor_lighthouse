@@ -124,6 +124,10 @@ PRODUCT_PACKAGES += \
 # StichImage
 PRODUCT_PACKAGES += \
     StitchImage
+
+# Fonts
+PRODUCT_PACKAGES += \
+    Custom-Fonts
     
 # Bootanimation
 include vendor/lighthouse/bootanimation/bootanimation.mk
