@@ -118,6 +118,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
+# CustomDoze
+PRODUCT_PACKAGES += \
+    CustomDoze
+
 # Bootanimation
 include vendor/lighthouse/bootanimation/bootanimation.mk
 
