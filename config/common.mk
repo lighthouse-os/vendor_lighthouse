@@ -121,7 +121,10 @@ PRODUCT_PACKAGES += \
 # CustomDoze
 PRODUCT_PACKAGES += \
     CustomDoze
-
+# StichImage
+PRODUCT_PACKAGES += \
+    StitchImage
+    
 # Bootanimation
 include vendor/lighthouse/bootanimation/bootanimation.mk
 
