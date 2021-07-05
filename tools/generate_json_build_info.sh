@@ -10,7 +10,7 @@ then
     datetime=$(grep ro\.build\.date\.utc ./out/target/product/$DEVICE/system/build.prop | cut -d= -f2);
     id=$(sha256sum $file_path | awk '{ print $1 }');
     version=$(echo $file_name | cut -d '-' -f2)
-    download="https://sourceforge.net/projects/project-lighthouse/files/$DEVICE/$file_name/download"
+    download="https://downloads.projectlighthouse.workers.dev/$DEVICE/$file_name/"
     echo '{
 
         "error": false,
@@ -23,6 +23,6 @@ then
         "size": '$file_size',
         "version": "'$version'"
 
-}' > "${file_name}.json"
+}' > "out/target/product/${DEVICE}/${file_name}.json"
   fi
 fi
