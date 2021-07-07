@@ -10,7 +10,7 @@ then
     datetime=$(grep ro\.build\.date\.utc ./out/target/product/$DEVICE/system/build.prop | cut -d= -f2);
     id=$(sha256sum $file_path | awk '{ print $1 }');
     version=$(echo $file_name | cut -d '-' -f2)
-    download="https://downloads.projectlighthouse.workers.dev/$DEVICE/$file_name/"
+    download="https://downloads.projectlighthouse.workers.dev/$DEVICE/$file_name"
     echo '{
 
         "error": false,
