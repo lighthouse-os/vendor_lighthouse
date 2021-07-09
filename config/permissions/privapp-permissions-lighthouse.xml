@@ -36,6 +36,9 @@
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.android.settings">
         <permission name="android.permission.RESET_BATTERY_STATS"/>
+        <permission name="android.permission.ACCESS_FONT_MANAGER"/>
+        <permission name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS"/>
+        <permission name="lineageos.permission.MANAGE_LIVEDISPLAY"/>
     </privapp-permissions>
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
@@ -43,7 +46,9 @@
         <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.WRITE_APN_SETTINGS"/>
         <permission name="android.permission.REBOOT"/>
-        <permission name="android.permission.RECOVERY"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS"/>
+        <permission name="lineageos.permission.MANAGE_LIVEDISPLAY"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.android.wallpaper">
@@ -59,6 +64,12 @@
     <privapp-permissions package="com.android.wallpaper">
         <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
         <permission name="android.permission.BIND_WALLPAPER"/>
+    </privapp-permissions>
+
+
+    <privapp-permissions package="com.custom.ambient.display">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
     </privapp-permissions>
 
 </permissions>
