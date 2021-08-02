@@ -50,6 +50,7 @@ PRODUCT_GENERIC_PROPERTIES += \
   ro.lighthouse.version=$(LIGHTHOUSE_VERSION) \
   ro.lighthouse.build.version=$(LIGHTHOUSE_BUILD_VERSION) \
   ro.lighthouse.build.type=$(LIGHTHOUSE_BUILD_TYPE) \
+  ro.lighthouse.build.variant=$(LIGHTHOUSE_VARIANT) \
   ro.lighthouse.build.date=$(LIGHTHOUSE_BUILD_DATE) \
   ro.lighthouse.build.fingerprint=$(LIGHTHOUSE_BUILD_FINGERPRINT) \
   ro.lighthouse.build.maintainer=$(LIGHTHOUSE_BUILD_MAINTAINER) \
