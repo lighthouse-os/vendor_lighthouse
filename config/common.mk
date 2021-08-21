@@ -74,7 +74,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/lighthouse/config/permissions/privapp-permissions-lighthouse.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lighthouse.xml \
     vendor/lighthouse/config/permissions/privapp-permissions-lighthouse.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lighthouse.xml \
-    vendor/lighthouse/config/permissions/privapp-permissions-livedisplay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-livedisplay.xml
+    vendor/lighthouse/config/permissions/privapp-permissions-livedisplay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-livedisplay.xml \
+    vendor/lighthouse/config/permissions/privapp-permissions-fonts-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-fonts-system_ext.xml
 
 ifeq ($(LIGHTHOUSE_VARIANT),GAPPS)
 # Enforce privapp-permissions whitelist
