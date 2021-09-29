@@ -309,5 +309,9 @@ PRODUCT_PACKAGES += \
     SystemClearSpringOverlay \
     SystemUIClearSpringOverlay
 
+# Zygote preforking
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lighthouse/config/partner_gms.mk
