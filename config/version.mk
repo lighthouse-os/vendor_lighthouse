@@ -26,8 +26,19 @@ ifeq ($(WITH_GAPPS), true)
 endif
 
 # Gapps
-ifeq ($(WITH_GAPPS), true)
-$(call inherit-product, vendor/gapps/config.mk)
+ifeq ($(WITH_GAPPS),true)
+$(call inherit-product, vendor/gms/gms_full.mk)
+LIGHTHOUSE_VARIANT := GAPPS
+
+# Common Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    vendor/lighthouse/overlay-gapps/common
+
+# Exclude RRO Enforcement
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
+    vendor/lighthouse/overlay-gapps
+
+$(call inherit-product, vendor/lighthouse/config/rro_overlays.mk)
 endif
 
 # System version
