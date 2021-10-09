@@ -17,4 +17,7 @@
 -->
 <resources>
     <string name="navigation_bar_length_long">Long</string>
+
+    <!-- Remove power menu shadow -->
+    <dimen name="global_actions_translate">0dp</dimen>
 </resources>
