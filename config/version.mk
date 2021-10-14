@@ -1,70 +1,57 @@
-# Copyright (C) 2016 The Pure Nexus Project
-# Copyright (C) 2016 The JDCTeam
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Versioning System
+LIGHTHOUSE_BUILD_VERSION = Raft
+LIGHTHOUSE_BUILD_TYPE ?= UNOFFICIAL
+LIGHTHOUSE_VARIANT ?= VANILLA
+LIGHTHOUSE_BUILD_MAINTAINER ?= Spam Dev Moment.
+LIGHTHOUSE_BUILD_DONATE_URL ?= https://www.paypal.me/dartdental
+LIGHTHOUSE_BUILD_SUPPORT_URL ?= https://t.me/LIGHTHOUSEOS_chat
 
-ARROW_MOD_VERSION = v12.0
-ARROW_BUILD_TYPE := UNOFFICIAL
-ARROW_BUILD_ZIP_TYPE := VANILLA
-
-ifeq ($(ARROW_BETA),true)
-    ARROW_BUILD_TYPE := BETA
-endif
-
-ifeq ($(ARROW_GAPPS), true)
-    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
-    ARROW_BUILD_ZIP_TYPE := GAPPS
-endif
-
-CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
-
-ifeq ($(ARROW_OFFICIAL), true)
-   LIST = $(shell cat infrastructure/devices/arrow.devices | awk '$$1 != "#" { print $$2 }')
-    ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
-      IS_OFFICIAL=true
-      ARROW_BUILD_TYPE := OFFICIAL
-
-PRODUCT_PACKAGES += \
-    Updater
-
-    endif
-    ifneq ($(IS_OFFICIAL), true)
-       ARROW_BUILD_TYPE := UNOFFICIAL
-       $(error Device is not official "$(CURRENT_DEVICE)")
+ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
+  OFFICIAL_DEVICES = $(shell cat device/official/lighthouse.devices)
+  FOUND_DEVICE =  $(filter $(LIGHTHOUSE_BUILD), $(OFFICIAL_DEVICES))
+    ifeq ($(FOUND_DEVICE),$(LIGHTHOUSE_BUILD))
+      LIGHTHOUSE_BUILD_TYPE := OFFICIAL
+    else
+      LIGHTHOUSE_BUILD_TYPE := UNOFFICIAL
+      $(error Device is not official "$(LIGHTHOUSE_BUILD)")
     endif
 endif
 
-ifeq ($(ARROW_COMMUNITY), true)
-   LIST = $(shell cat infrastructure/devices/arrow-community.devices | awk '$$1 != "#" { print $$2 }')
-    ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
-      IS_COMMUNITY=true
-      ARROW_BUILD_TYPE := COMMUNITY
-    endif
-    ifneq ($(IS_COMMUNITY), true)
-       ARROW_BUILD_TYPE := UNOFFICIAL
-       $(error This isn't a community device "$(CURRENT_DEVICE)")
-    endif
+ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
+    TARGET_INCLUDE_LIVE_WALLPAPERS=true
+    TARGET_INCLUDE_STOCK_GAPPS=true
+endif
+ifeq ($(WITH_GAPPS), true)
+    LIGHTHOUSE_VARIANT := GAPPS
 endif
 
-ARROW_VERSION := Arrow-$(ARROW_MOD_VERSION)-$(CURRENT_DEVICE)-$(ARROW_BUILD_TYPE)-$(shell date -u +%Y%m%d)-$(ARROW_BUILD_ZIP_TYPE)
+# Gapps
+ifeq ($(WITH_GAPPS), true)
+$(call inherit-product, vendor/gapps/config.mk)
+endif
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.arrow.version=$(ARROW_VERSION) \
-  ro.arrow.releasetype=$(ARROW_BUILD_TYPE) \
-  ro.arrow.ziptype=$(ARROW_BUILD_ZIP_TYPE) \
-  ro.modversion=$(ARROW_MOD_VERSION)
+# System version
+TARGET_PRODUCT_SHORT := $(subst lighthouse_,,$(LIGHTHOUSE_BUILD_TYPE))
 
-ARROW_DISPLAY_VERSION := Arrow-$(ARROW_MOD_VERSION)-$(ARROW_BUILD_TYPE)
+LIGHTHOUSE_DATE_YEAR := $(shell date -u +%Y)
+LIGHTHOUSE_DATE_MONTH := $(shell date -u +%m)
+LIGHTHOUSE_DATE_DAY := $(shell date -u +%d)
+LIGHTHOUSE_DATE_HOUR := $(shell date -u +%H)
+LIGHTHOUSE_DATE_MINUTE := $(shell date -u +%M)
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.arrow.display.version=$(ARROW_DISPLAY_VERSION)
+
+LIGHTHOUSE_BUILD_DATE := $(LIGHTHOUSE_DATE_YEAR)$(LIGHTHOUSE_DATE_MONTH)$(LIGHTHOUSE_DATE_DAY)-$(LIGHTHOUSE_DATE_HOUR)$(LIGHTHOUSE_DATE_MINUTE)
+LIGHTHOUSE_BUILD_FINGERPRINT := LighthouseOS/$(LIGHTHOUSE_VERSION)/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(LIGHTHOUSE_BUILD_DATE)
+LIGHTHOUSE_VERSION := LighthouseOS-$(LIGHTHOUSE_BUILD_VERSION)-$(LIGHTHOUSE_BUILD_TYPE)-$(LIGHTHOUSE_BUILD)-$(LIGHTHOUSE_BUILD_DATE)-$(LIGHTHOUSE_VARIANT)
+
+PRODUCT_GENERIC_PROPERTIES += \
+  ro.lighthouse.device=$(LIGHTHOUSE_BUILD) \
+  ro.lighthouse.version=$(LIGHTHOUSE_VERSION) \
+  ro.lighthouse.build.version=$(LIGHTHOUSE_BUILD_VERSION) \
+  ro.lighthouse.build.type=$(LIGHTHOUSE_BUILD_TYPE) \
+  ro.lighthouse.build.variant=$(LIGHTHOUSE_VARIANT) \
+  ro.lighthouse.build.date=$(LIGHTHOUSE_BUILD_DATE) \
+  ro.lighthouse.build.fingerprint=$(LIGHTHOUSE_BUILD_FINGERPRINT) \
+  ro.lighthouse.build.maintainer=$(LIGHTHOUSE_BUILD_MAINTAINER) \
+  ro.lighthouse.build.donate_url=$(LIGHTHOUSE_BUILD_DONATE_URL) \
+  ro.lighthouse.build.support_url=$(LIGHTHOUSE_BUILD_SUPPORT_URL)
