@@ -107,7 +107,7 @@ include vendor/lighthouse/config/bootanimation.mk
 include vendor/lighthouse/config/fonts.mk
 
 # OTA
-include vendor/lighthouse/config/ota.mk
+#include vendor/lighthouse/config/ota.mk
 
 # Packages
 include vendor/lighthouse/config/packages.mk
