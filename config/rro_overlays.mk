@@ -1,5 +1,6 @@
 # Google Overlays
 PRODUCT_PACKAGES += \
+    CustomPixelLauncherOverlay \
     CaptivePortalLoginOverlay \
     CellBroadcastServiceOverlay \
     GoogleConfigOverlay \
