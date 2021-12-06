@@ -142,9 +142,6 @@
     <!-- Face detection for screen auto rotation -->
     <string name="config_defaultRotationResolverService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiRotationResolverService</string>
 
-    <!-- Flag indicating which package name can access DeviceConfig table -->
-    <string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string>
-
     <!-- Control the behavior when the user long presses the power button.
             0 - Nothing
             1 - Global actions menu
