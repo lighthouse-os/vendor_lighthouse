@@ -39,7 +39,8 @@ PRODUCT_COPY_FILES += \
 
 # init file
 PRODUCT_COPY_FILES += \
-    vendor/lighthouse/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.lighthouse.rc
+    vendor/lighthouse/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.lighthouse.rc \
+    vendor/lighthouse/prebuilt/common/etc/init/custom-updates.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/custom-updates.rc
 
 # Enable one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
