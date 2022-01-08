@@ -114,6 +114,9 @@ PRODUCT_PACKAGES += \
     Updates
 # endif
 
+# Themes
+include vendor/lighthouse/config/themes.mk
+
 # Packages
 include vendor/lighthouse/config/packages.mk
 
