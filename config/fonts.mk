@@ -13,13 +13,25 @@
 # limitations under the License.
 
 
-$(call inherit-product-if-exists, external/google-fonts/arbutus-slab/fonts.mk)
-$(call inherit-product-if-exists, external/google-fonts/arvo/fonts.mk)
-$(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
-$(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
+PRODUCT_PACKAGES += \
+    GInterVF-Italic.ttf \
+    GInterVF-Roman.ttf \
+    HarmonyOS-Sans-BlackItalic.ttf \
+    HarmonyOS-Sans-Black.ttf \
+    HarmonyOS-Sans-BoldItalic.ttf \
+    HarmonyOS-Sans-Bold.ttf \
+    HarmonyOS-Sans-Italic.ttf \
+    HarmonyOS-Sans-LightItalic.ttf \
+    HarmonyOS-Sans-Light.ttf \
+    HarmonyOS-Sans-MediumItalic.ttf \
+    HarmonyOS-Sans-Medium.ttf \
+    HarmonyOS-Sans-Regular.ttf \
+    HarmonyOS-Sans-ThinItalic.ttf \
+    HarmonyOS-Sans-Thin.ttf \
+    Lexend-VF.ttf \
+    Manrope-VF.ttf
 
+# Register vendor fonts
 PRODUCT_COPY_FILES += \
-    vendor/lighthouse/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml \
-    vendor/lighthouse/fonts/GoogleSans-Italic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Italic.ttf \
-    vendor/lighthouse/fonts/GoogleSans-Regular.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Regular.ttf
-
+    $(call find-copy-subdir-files,*,vendor/lighthouse/fonts/prebuilt,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/lighthouse/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml

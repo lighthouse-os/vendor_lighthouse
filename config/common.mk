@@ -104,8 +104,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Bootanimation
 include vendor/lighthouse/config/bootanimation.mk
 
-# Fonts
-include vendor/lighthouse/config/fonts.mk
+# Inherit from fonts config
+$(call inherit-product, vendor/lighthouse/config/fonts.mk)
+
+# Inherit from gfonts config
+$(call inherit-product, vendor/lighthouse/config/gfonts.mk)
+
 
 # OTA
 # ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
