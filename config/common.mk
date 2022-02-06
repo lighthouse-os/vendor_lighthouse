@@ -108,9 +108,9 @@ include vendor/lighthouse/config/bootanimation.mk
 include vendor/lighthouse/config/fonts.mk
 
 # OTA
-ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
-include vendor/lighthouse/config/ota.mk
-endif
+# ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
+# include vendor/lighthouse/config/ota.mk
+# endif
 
 # Packages
 include vendor/lighthouse/config/packages.mk
