@@ -109,7 +109,9 @@ include vendor/lighthouse/config/fonts.mk
 
 # OTA
 # ifeq ($(LIGHTHOUSE_BUILD_TYPE), OFFICIAL)
-# include vendor/lighthouse/config/ota.mk
+include vendor/lighthouse/config/ota.mk
+PRODUCT_PACKAGES += \
+    Updates
 # endif
 
 # Packages
