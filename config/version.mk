@@ -41,6 +41,7 @@ LIGHTHOUSE_DATE_MONTH := $(shell date -u +%m)
 LIGHTHOUSE_DATE_DAY := $(shell date -u +%d)
 LIGHTHOUSE_DATE_HOUR := $(shell date -u +%H)
 LIGHTHOUSE_DATE_MINUTE := $(shell date -u +%M)
+LIGHTHOUSE_DATETIME := $(shell date -u +%s)
 
 
 LIGHTHOUSE_BUILD_DATE := $(LIGHTHOUSE_DATE_YEAR)$(LIGHTHOUSE_DATE_MONTH)$(LIGHTHOUSE_DATE_DAY)-$(LIGHTHOUSE_DATE_HOUR)$(LIGHTHOUSE_DATE_MINUTE)
@@ -52,7 +53,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.lighthouse.build.version=$(LIGHTHOUSE_BUILD_VERSION) \
   ro.lighthouse.build.type=$(LIGHTHOUSE_BUILD_TYPE) \
   ro.lighthouse.build.variant=$(LIGHTHOUSE_VARIANT) \
-  ro.lighthouse.build.date=$(LIGHTHOUSE_BUILD_DATE) \
+  ro.lighthouse.build.date=$(LIGHTHOUSE_DATE) \
+  ro.lighthouse.build.datetime=$(LIGHTHOUSE_DATETIME) \
   ro.lighthouse.build.fingerprint=$(LIGHTHOUSE_BUILD_FINGERPRINT) \
   ro.lighthouse.build.maintainer=$(LIGHTHOUSE_BUILD_MAINTAINER) \
   ro.lighthouse.build.donate_url=$(LIGHTHOUSE_BUILD_DONATE_URL) \
