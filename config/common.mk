@@ -118,6 +118,13 @@ PRODUCT_PACKAGES += \
     Updates
 # endif
 
+# UDFPS Animations
+EXTRA_UDFPS_ANIMATIONS ?= false
+ifeq ($(EXTRA_UDFPS_ANIMATIONS),true)
+PRODUCT_PACKAGES += \
+    UdfpsResources
+endif
+
 # Themes
 include vendor/lighthouse/config/themes.mk
 
