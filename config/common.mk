@@ -122,6 +122,10 @@ PRODUCT_PACKAGES += \
     Updates
 # endif
 
+# Sandboxed Google Play
+PRODUCT_PACKAGES += \
+    GmsCompat \
+
 # UDFPS Animations
 EXTRA_UDFPS_ANIMATIONS ?= false
 ifeq ($(EXTRA_UDFPS_ANIMATIONS),true)
