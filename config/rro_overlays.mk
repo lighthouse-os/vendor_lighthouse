@@ -14,7 +14,8 @@ PRODUCT_PACKAGES += \
     PixelConfigOverlayCommon \
     PixelSetupWizardOverlayAosp \
     PixelTetheringOverlay \
-    SettingsGoogleOverlayAosp
+    SettingsGoogleOverlayAosp \
+    NavigationBarModeGesturalOverlayFS
 
 ifeq ($(TARGET_INCLUDE_LIVE_WALLPAPERS),true)
 PRODUCT_PACKAGES += \
