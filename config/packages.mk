@@ -35,7 +35,7 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # Charger mode images
-ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
+ifeq ($(TARGET_EXCLUDE_PIXEL_CHARGER),)
 PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images
