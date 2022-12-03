@@ -15,13 +15,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/yaap_arm.mk \
-    $(LOCAL_DIR)/yaap_arm64.mk \
-    $(LOCAL_DIR)/yaap_x86.mk \
-    $(LOCAL_DIR)/yaap_x86_64.mk
+    $(LOCAL_DIR)/lighthouse_arm.mk \
+    $(LOCAL_DIR)/lighthouse_arm64.mk \
+    $(LOCAL_DIR)/lighthouse_x86.mk \
+    $(LOCAL_DIR)/lighthouse_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    yaap_arm-userdebug \
-    yaap_arm64-userdebug \
-    yaap_x86-userdebug \
-    yaap_x86_64-userdebug
+    lighthouse_arm-userdebug \
+    lighthouse_arm64-userdebug \
+    lighthouse_x86-userdebug \
+    lighthouse_x86_64-userdebug

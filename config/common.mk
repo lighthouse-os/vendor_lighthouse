@@ -21,15 +21,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/yaap/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/yaap/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
+    vendor/lighthouse/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/lighthouse/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/lighthouse/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/yaap/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/yaap/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/lighthouse/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/lighthouse/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/lighthouse/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
@@ -40,8 +40,8 @@ endif
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Copy all YAAP-specific init rc files
-$(foreach f,$(wildcard vendor/yaap/prebuilt/common/etc/init/*.rc),\
+# Copy all Lighthouse-specific init rc files
+$(foreach f,$(wildcard vendor/lighthouse/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Don't compile SystemUITests
@@ -60,22 +60,22 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := art/build/boot/boot-image-prof
 # LatinIME gesture typing
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),arm64)
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so \
-    vendor/yaap/prebuilt/common/lib64/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinimegoogle.so
+    vendor/lighthouse/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so \
+    vendor/lighthouse/prebuilt/common/lib64/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so \
-    vendor/yaap/prebuilt/common/lib/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinimegoogle.so
+    vendor/lighthouse/prebuilt/common/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so \
+    vendor/lighthouse/prebuilt/common/lib/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinimegoogle.so
 endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/yaap-privapp-permissions.xml \
-    vendor/yaap/prebuilt/common/etc/permissions/yaap-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/yaap-power-whitelist.xml
+    vendor/lighthouse/prebuilt/common/etc/permissions/lighthouse-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/lighthouse-privapp-permissions.xml \
+    vendor/lighthouse/prebuilt/common/etc/permissions/lighthouse-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lighthouse-power-whitelist.xml
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/lighthouse/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
@@ -88,10 +88,10 @@ SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Product overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/lighthouse/overlay
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lighthouse/overlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla
+PRODUCT_PACKAGE_OVERLAYS += vendor/lighthouse/overlay-vanilla
 endif
 
 # Disable vendor restrictions
@@ -107,13 +107,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.input.video_enabled=false
 
 # Bootanimation
-include vendor/yaap/config/bootanimation.mk
+include vendor/lighthouse/config/bootanimation.mk
 
 # Packages
-include vendor/yaap/config/packages.mk
+include vendor/lighthouse/config/packages.mk
 
 # Versioning
-include vendor/yaap/config/version.mk
+include vendor/lighthouse/config/version.mk
 
 # ART
 # Optimize everything for preopt
@@ -170,4 +170,4 @@ PRODUCT_HOST_PACKAGES += \
 $(call inherit-product, vendor/themes/common.mk)
 
 # Sepolicy
-$(call inherit-product, vendor/yaap/config/sepolicy.mk)
+$(call inherit-product, vendor/lighthouse/config/sepolicy.mk)

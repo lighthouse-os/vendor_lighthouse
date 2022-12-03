@@ -1,7 +1,7 @@
 
 bootstrap_go_package {
-    name: "soong-yaap-generator",
-    pkgPath: "yaap/soong/generator",
+    name: "soong-lighthouse-generator",
+    pkgPath: "lighthouse/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -16,7 +16,7 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-yaap_generator {
+lighthouse_generator {
     name: "generated_kernel_includes",
 
     // The headers make command

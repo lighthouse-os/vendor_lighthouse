@@ -1,7 +1,7 @@
 PRODUCT_PACKAGES += \
     ThemePicker \
 
-# Extra tools in YAAP
+# Extra tools in Lighthouse
 PRODUCT_PACKAGES += \
     bash \
     curl \
@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
-# YAAP packages
+# Lighthouse packages
 PRODUCT_PACKAGES += \
     MatLog \
     OpenDelta \

@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_x86.mk)
+$(call inherit-product, build/target/product/aosp_arm.mk)
 
-include vendor/yaap/build/target/product/yaap_generic_target.mk
+include vendor/lighthouse/build/target/product/lighthouse_generic_target.mk
 
 TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_NAME := yaap_x86
+PRODUCT_NAME := lighthouse_arm

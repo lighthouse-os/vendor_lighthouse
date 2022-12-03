@@ -20,8 +20,8 @@ EXPORT_TO_SOONG := \
 # Documentation here:
 # https://github.com/LineageOS/android_build_soong/commit/8328367c44085b948c003116c0ed74a047237a69
 
-SOONG_CONFIG_NAMESPACES += yaapVarsPlugin
-SOONG_CONFIG_yaapVarsPlugin :=
+SOONG_CONFIG_NAMESPACES += lighthouseVarsPlugin
+SOONG_CONFIG_lighthouseVarsPlugin :=
 
 SOONG_CONFIG_NAMESPACES += lineageGlobalVars
 SOONG_CONFIG_lineageGlobalVars += \
@@ -44,8 +44,8 @@ SOONG_CONFIG_lineageQcomVars += \
 endif
 
 define addVar
-    SOONG_CONFIG_yaapVarsPlugin += $(1)
-    SOONG_CONFIG_yaapVarsPlugin_$(1) := $$(subst ",\",$$($1))
+    SOONG_CONFIG_lighthouseVarsPlugin += $(1)
+    SOONG_CONFIG_lighthouseVarsPlugin_$(1) := $$(subst ",\",$$($1))
 endef
 
 # Set default values

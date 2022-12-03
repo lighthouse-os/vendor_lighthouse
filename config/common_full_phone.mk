@@ -1,5 +1,5 @@
 # Inherit common stuff
-$(call inherit-product, vendor/yaap/config/common.mk)
+$(call inherit-product, vendor/lighthouse/config/common.mk)
 
 # World APN list
 PRODUCT_PACKAGES += \

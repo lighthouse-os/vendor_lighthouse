@@ -16,5 +16,5 @@
      limitations under the License.
 -->
 <resources>
-    <string name="themes_stub_package" translatable="false">org.yaap.customisation</string>
+    <string name="themes_stub_package" translatable="false">org.lighthouse.customisation</string>
 </resources>
